@@ -4,6 +4,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
@@ -23,9 +24,14 @@ import com.example.swu_home.fragment.FragmentSit;
 
 import java.util.concurrent.TimeUnit;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends FragmentActivity {
 
-    private TabLayout menuTabLayout;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    /*private TabLayout menuTabLayout;
     private ViewPager menuViewPager;
     private Context mContext;
     @Override
@@ -114,7 +120,7 @@ public class MainActivity extends AppCompatActivity {
         public int getCount() {
             return tabCount;
         }
-    } //end class ViewPagerAdapter
+    } //end class ViewPagerAdapter*/
 
     private long backPressedAt;
 

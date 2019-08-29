@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <tabs>
+        <tab
+            id="@+id/tab_home"
+            icon="@drawable/home_icon"
+            title="home" />
+        <tab
+            id="@+id/tab_alarm"
+            icon="@drawable/alarm_icon"
+            title="alarm" />
+        <tab
+            id="@+id/tab_setting"
+            icon="@drawable/setting_icon"
+            title="setting" />
+    </tabs>
+
+</PreferenceScreen>
