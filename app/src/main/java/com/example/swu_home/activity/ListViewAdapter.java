@@ -1,6 +1,7 @@
 package com.example.swu_home.activity;
 
 import android.content.Context;
+import android.graphics.drawable.Drawable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -67,6 +68,19 @@ public class ListViewAdapter extends BaseAdapter {
     // 지정한 위치(position)에 있는 데이터 리턴 : 필수 구현
     @Override
     public Object getItem(int position) {
-        return listViewItemList.get(position) ;
+
+        return listViewItemList.get(position);
+    }
+
+    // 아이템 데이터 추가를 위한 함수.
+    public void addItem(Drawable icon, String situation, String setled, String setSit) {
+        ListViewItemSet item = new ListViewItemSet();
+
+        item.setIcon(icon);
+        item.setSitName(situation);
+        item.setLed(setled);
+        item.setOn_Off(setSit);
+
+        listViewItemList.add(item);
     }
 }

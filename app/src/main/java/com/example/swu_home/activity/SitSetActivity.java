@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.Spinner;
 import android.widget.Switch;
 import android.widget.Toast;
@@ -57,6 +58,26 @@ public class SitSetActivity extends AppCompatActivity {
 
             }
         });
+        //스위치 리스너
+        sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+                if(isChecked == true){
+                    Intent boolintent = new Intent(SitSetActivity.this, SitListActivity.class);
+                    boolintent.putExtra("bool", true);
+                    startActivity(boolintent);
+
+                }
+                else {
+                    Intent boolintent = new Intent(SitSetActivity.this, SitListActivity.class);
+                    boolintent.putExtra("bool", false);
+                    startActivity(boolintent);
+
+
+                }
+            }
+        });
+
 
         //버튼 리스너
         alertbtn.setOnClickListener(new View.OnClickListener() {
@@ -82,7 +103,9 @@ public class SitSetActivity extends AppCompatActivity {
         {
             select_item = "red";
             Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
+            Intent intent2 = new Intent(SitSetActivity.this, SitListActivity.class);
             intent.putExtra("color",select_item);
+            intent2.putExtra("color", select_item);
             startActivity(intent);
         }
 
@@ -90,7 +113,9 @@ public class SitSetActivity extends AppCompatActivity {
         {
             select_item = "green";
             Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
+            Intent intent2 = new Intent(SitSetActivity.this, SitListActivity.class);
             intent.putExtra("color",select_item);
+            intent2.putExtra("color", select_item);
             startActivity(intent);
 
         }
@@ -99,7 +124,9 @@ public class SitSetActivity extends AppCompatActivity {
         {
             select_item = "yellow";
             Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
+            Intent intent2 = new Intent(SitSetActivity.this, SitListActivity.class);
             intent.putExtra("color",select_item);
+            intent2.putExtra("color", select_item);
             startActivity(intent);
         }
     }

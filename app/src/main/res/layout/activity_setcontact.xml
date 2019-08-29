@@ -20,7 +20,7 @@
 
 
     <EditText
-        android:id="@+id/editText3"
+        android:id="@+id/editRelation"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -28,7 +28,7 @@
         android:layout_marginTop="296dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Relation"
+        android:hint="relation"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -46,7 +46,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText2"
+        android:id="@+id/editName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -54,12 +54,13 @@
         android:layout_marginTop="204dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:hint="name"
+
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/editText4"
+        android:id="@+id/editNumber"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="140dp"
@@ -67,6 +68,7 @@
         android:layout_marginTop="388dp"
         android:ems="10"
         android:inputType="phone"
+        android:hint="phone"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -97,7 +99,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/setbtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="288dp"
