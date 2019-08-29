@@ -13,15 +13,31 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
 
-        tools:srcCompat="@tools:sample/avatars"
-        android:layout_marginTop="300dp"/>
+        android:layout_marginTop="200dp"
+        tools:src="@drawable/alertFire_icon" />
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:text="\n화재경보기가 울리고 있습니다! \n &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160; 확인해보세요!"
-        android:textColor="@android:color/holo_red_dark"
+        android:layout_marginTop="40dp"
+        android:text="화재 경보기가 울립니다."
+        android:textColor="#3b3b3b"
+
+
+        android:textStyle="bold"
+        android:textSize="20dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"></TextView>
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="대피하세요!"
+        android:textColor="#3b3b3b"
 
 
         android:textStyle="bold"
