@@ -1,22 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="match_parent"
-        android:layout_height="50dp"
-        android:gravity="center"
-        android:text="소리를 보다"
-        android:textSize="20dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="10dp"
-        android:textColor="#3b3130"
-        android:textStyle="bold"/>
 
     <LinearLayout
         android:id="@+id/linearLayout"
@@ -27,6 +16,13 @@
         android:orientation="horizontal">
 
     </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:srcCompat="@drawable/logo_icon" />
 
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
