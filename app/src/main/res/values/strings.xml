@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Swu_Home</string>
+    <color name="bg">#FFFFFF</color>
 </resources>
