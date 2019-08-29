@@ -62,14 +62,25 @@
                 android:text="보호자 문자 발송"
                 android:textStyle="bold" />
 
-            <Spinner
-                android:id="@+id/spinContact"
-                android:layout_width="0dp"
+            <Switch
+                android:id="@+id/switch1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:spinnerMode="dropdown" />
+                android:switchMinWidth="40dp"
+                android:trackTint="@color/colorAccent"
+
+                />
+
+
+            <!--    <Spinner
+                    android:id="@+id/spinContact"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:spinnerMode="dropdown" />-->
 
         </LinearLayout>
+
 
     </LinearLayout>
 

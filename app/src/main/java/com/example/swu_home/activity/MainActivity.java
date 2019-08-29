@@ -15,11 +15,11 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-
 import com.example.swu_home.R;
 import com.example.swu_home.fragment.FragmentAlarm;
 import com.example.swu_home.fragment.FragmentSetting;
 import com.example.swu_home.fragment.FragmentSit;
+
 
 import java.util.concurrent.TimeUnit;
 
@@ -27,9 +27,7 @@ public class MainActivity extends AppCompatActivity {
 
     private TabLayout menuTabLayout;
     private ViewPager menuViewPager;
-
     private Context mContext;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         menuTabLayout = findViewById(R.id.tabLayout);
         menuViewPager = findViewById(R.id.viewPager);
+
 
         menuTabLayout.addTab(menuTabLayout.newTab().setCustomView(createTabView("홈")));
         menuTabLayout.addTab(menuTabLayout.newTab().setCustomView(createTabView2("알림")));
@@ -64,27 +63,27 @@ public class MainActivity extends AppCompatActivity {
 
 
         LinearLayout linearLayout = findViewById(R.id.linearLayout);
-        linearLayout.setOnClickListener(mClicks);
+
     } // end onCreate()
 
     //커스텀 탭바 적용
     private View createTabView(String tabName) {
-        //View tabView = LayoutInflater.from(mContext).inflate(R.layout.custom_tab, null);
-        TextView txtName = (TextView) tabView.findViewById(R.id.txtName);
+        View tabView = LayoutInflater.from(mContext).inflate(R.layout.home_tab, null);
+        TextView txtName = (TextView) tabView.findViewById(R.id.tabName);
         txtName.setText(tabName);
         return tabView;
     }
     //커스텀 탭바2 적용
     private View createTabView2(String tabName) {
-        View tabView = LayoutInflater.from(mContext).inflate(R.layout.custom_tab2, null);
-        TextView txtName = (TextView) tabView.findViewById(R.id.txtName);
+        View tabView = LayoutInflater.from(mContext).inflate(R.layout.alert_tab, null);
+        TextView txtName = (TextView) tabView.findViewById(R.id.tabName);
         txtName.setText(tabName);
         return tabView;
     }
     //커스텀 탭바3 적용
     private View createTabView3(String tabName) {
-        View tabView = LayoutInflater.from(mContext).inflate(R.layout.custom_tab3, null);
-        TextView txtName = (TextView) tabView.findViewById(R.id.txtName);
+        View tabView = LayoutInflater.from(mContext).inflate(R.layout.setting_tab, null);
+        TextView txtName = (TextView) tabView.findViewById(R.id.tabName);
         txtName.setText(tabName);
         return tabView;
     }
@@ -135,21 +134,7 @@ public class MainActivity extends AppCompatActivity {
         }
     }
 
-    private View.OnClickListener mClicks = new View.OnClickListener() {
-        @Override
-        public void onClick(View view) {
-            switch (view.getId()) {
-                case R.id.linearLayout:
-                    Intent i = new Intent(MainActivity.this, ModifyMemberActivity.class);
-                    startActivity(i);
-            }
-        }
-    };
 
 
 
-
-
-
-}
 }
