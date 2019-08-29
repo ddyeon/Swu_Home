@@ -7,6 +7,7 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -20,16 +21,53 @@ import com.example.swu_home.R;
 import com.example.swu_home.fragment.FragmentAlarm;
 import com.example.swu_home.fragment.FragmentSetting;
 import com.example.swu_home.fragment.FragmentSit;
+import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;
 
 
 import java.util.concurrent.TimeUnit;
 
 public class MainActivity extends FragmentActivity {
 
+    private FragmentSit fragmentSit;
+    private FragmentAlarm fragmentAlarm;
+    private FragmentSetting fragmentSetting;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        fragmentSit = new FragmentSit();
+        fragmentAlarm = new FragmentAlarm();
+        fragmentSetting = new FragmentSetting();
+
+        initFragment();
+
+        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
+        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+            @Override
+            public void onTabSelected(int tabId) {
+                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+
+                if(tabId == R.id.tab_home){
+                    transaction.replace(R.id.contentContainer, fragmentSit).commit();
+                }else if(tabId == R.id.tab_alarm){
+                    transaction.replace(R.id.contentContainer, fragmentAlarm).commit();
+                }else if(tabId == R.id.tab_setting){
+                    transaction.replace(R.id.contentContainer, fragmentSetting).commit();
+                }
+            }
+        });
+    }
+
+    //app 실행 시 보여지는 Fragment 설정
+    public void initFragment(){
+        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+        transaction.add(R.id.contentContainer, fragmentSit);
+        transaction.addToBackStack(null);
+        transaction.commit();
     }
     /*private TabLayout menuTabLayout;
     private ViewPager menuViewPager;
