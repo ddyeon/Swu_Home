@@ -10,7 +10,7 @@
         android:id="@+id/imgTab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:src="@drawable/cart2_icon" />
+        android:src="@drawable/" />
     <TextView
         android:id="@+id/tabName"
         android:layout_width="wrap_content"
