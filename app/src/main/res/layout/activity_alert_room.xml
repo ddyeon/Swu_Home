@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
 
         android:layout_marginTop="150dp"
-        tools:src="@drawable/alertDoor_icon" />
+        tools:src="@drawable/alertdoor_icon" />
 
     <TextView
         android:layout_width="wrap_content"
