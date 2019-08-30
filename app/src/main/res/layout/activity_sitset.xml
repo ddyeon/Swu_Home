@@ -11,17 +11,18 @@
         android:id="@+id/titleBuyDetail"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="알람 환경"
-        android:textStyle="bold"
-        android:textColor="#333333"
-        android:gravity="center"
-        android:textSize="20dp"
         android:layout_marginTop="15dp"
-        android:paddingTop="20dp" />
+        android:gravity="center"
+        android:paddingTop="20dp"
+        android:text="알람 환경"
+        android:textColor="#333333"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:fontFamily="sans-serif" />
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="639dp"
+        android:layout_height="wrap_content"
         android:orientation="vertical">
 
         <LinearLayout
@@ -38,7 +39,8 @@
                 android:layout_weight="1"
                 android:text="led 색상"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                app:fontFamily="sans-serif"
+                android:textColor="#333333"/>
 
             <Spinner
                 android:id="@+id/spinLED"
@@ -53,8 +55,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="15dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
+            android:layout_marginBottom="20dp"
             android:paddingTop="20dp"
             android:orientation="horizontal">
 
@@ -64,12 +67,14 @@
                 android:layout_weight="1"
                 android:text="보호자 문자 발송"
                 android:textSize="20dp"
-                android:textStyle="bold" />
+                app:fontFamily="sans-serif"
+                android:textColor="#333333"/>
 
             <Switch
                 android:id="@+id/switch1"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
+                android:layout_weight="1"
                 android:showText="true"
                 android:textOff="OFF"
                 android:textOn="ON"
@@ -90,12 +95,24 @@
                     android:spinnerMode="dropdown" />-->
 
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical"
+        android:gravity="bottom">
+
         <Button
             android:id="@+id/btnOn"
             android:layout_width="match_parent"
             android:layout_height="40dp"
+            android:background="@drawable/border_button"
             android:text="알람 켜기" />
     </LinearLayout>
+
 
 
 </LinearLayout>
