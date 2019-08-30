@@ -30,13 +30,13 @@
         android:layout_height="0dp"
         android:layout_weight="9" />
 
-    <FrameLayout
+<!--    <FrameLayout
         android:id="@+id/contentContainer"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottomBar" />
+        android:layout_above="@+id/bottomBar" />-->
 
-    <android.support.design.widget.BottomNavigationView
+    <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navi"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

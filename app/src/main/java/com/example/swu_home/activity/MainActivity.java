@@ -1,5 +1,6 @@
 package com.example.swu_home.activity;
 
+import android.app.AppComponentFactory;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -22,10 +23,11 @@ import com.roughike.bottombar.OnTabSelectListener;*/
         import java.util.concurrent.TimeUnit;
 
         import androidx.annotation.NonNull;
-        import androidx.fragment.app.FragmentActivity;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
         import androidx.viewpager.widget.ViewPager;
 
-public class MainActivity extends FragmentActivity {
+public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     private ViewPager menuViewPager;
