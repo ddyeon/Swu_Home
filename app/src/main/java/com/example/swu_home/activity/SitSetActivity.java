@@ -16,9 +16,10 @@ import android.widget.Toast;
 import com.example.swu_home.R;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 
-public class SitSetActivity extends AppCompatActivity {
+public class SitSetActivity extends FragmentActivity {
 
     private String select_item;
 
@@ -32,6 +33,9 @@ public class SitSetActivity extends AppCompatActivity {
 
         //알림 버튼
         Button alertbtn = (Button)findViewById(R.id.btnOn);
+
+        //FragmentSit에서 받기
+        Intent i = getIntent();
 
         //color arrary 가져오기
         final String [] data = getResources().getStringArray(R.array.color);

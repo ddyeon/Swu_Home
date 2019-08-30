@@ -1,24 +1,33 @@
 package com.example.swu_home.activity;
 
+import android.app.Activity;
+import android.app.AppComponentFactory;
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.MenuItem;
-import android.widget.Toast;
+        import android.view.View;
+        import android.widget.LinearLayout;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.viewpager.widget.ViewPager;
-
-import com.example.swu_home.R;
-import com.example.swu_home.fragment.FragmentAlarm;
-import com.example.swu_home.fragment.FragmentSetting;
-import com.example.swu_home.fragment.FragmentSit;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
-
-import java.util.concurrent.TimeUnit;
+        import com.example.swu_home.R;
+        import com.example.swu_home.fragment.FragmentAlarm;
+        import com.example.swu_home.fragment.FragmentSetting;
+        import com.example.swu_home.fragment.FragmentSit;
+        import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 /*import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;*/
+
+
+        import java.util.concurrent.TimeUnit;
+
+        import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
+import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -30,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private FragmentSetting fragmentSetting;
     MenuItem prevMenuItem;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -37,7 +47,39 @@ public class MainActivity extends AppCompatActivity {
         //veiwpager 설정
         menuViewPager = findViewById(R.id.viewPager);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navi);
+     /*   Intent i = getIntent();
 
+        String str = "초인종";
+        if(i != null) {
+            str = i.getExtras().getString("situation");
+
+
+            if (str.equals("초인종")) {
+                Intent setintent = new Intent(MainActivity.this, SitSetActivity.class);
+                setintent.putExtra("situation", str);
+                startActivity(setintent);
+            }
+            if (str.equals("문")) {
+                Intent setintent = new Intent(MainActivity.this, SitSetActivity.class);
+                setintent.putExtra("situation", str);
+                startActivity(setintent);
+            }
+            if (str.equals("화재")) {
+                Intent setintent = new Intent(MainActivity.this, SitSetActivity.class);
+                setintent.putExtra("situation", str);
+                startActivity(setintent);
+            }
+            if (str.equals("세탁기")) {
+                Intent setintent = new Intent(MainActivity.this, SitSetActivity.class);
+                setintent.putExtra("situation", str);
+                startActivity(setintent);
+            }
+            if (str.equals("아기")) {
+                Intent setintent = new Intent(MainActivity.this, SitSetActivity.class);
+                setintent.putExtra("situation", str);
+                startActivity(setintent);
+            }
+        }*/
         bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
             public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
@@ -50,7 +92,7 @@ public class MainActivity extends AppCompatActivity {
                         menuViewPager.setCurrentItem(1);
                         break;
 
-                    case R.id.action_contact:
+                    case R.id.action_setting:
                         menuViewPager.setCurrentItem(2);
                         break;
                 }
@@ -85,11 +127,12 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         setupViewPager(menuViewPager);
+
     }
 
     private void setupViewPager(ViewPager viewPager){
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        fragmentSit=new FragmentSit();
+        fragmentSit = new FragmentSit();
         fragmentAlarm=new FragmentAlarm();
         fragmentSetting=new FragmentSetting();
 
@@ -213,6 +256,7 @@ public class MainActivity extends AppCompatActivity {
             }
         }
     }
+
 
 
 
