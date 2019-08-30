@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:text="알람 환경"
         android:textStyle="bold"
-        android:textColor="#ff4848"
+        android:textColor="#333333"
         android:gravity="center"
         android:textSize="20dp"
         android:layout_marginTop="15dp"
