@@ -4,17 +4,51 @@ xmlns:app="http://schemas.android.com/apk/res-auto"
 xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
-android:orientation="vertical"
-    >
+android:orientation="vertical">
 
-<TextView
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:textSize="20sp"
-    android:text="상황별 설정"
-    android:layout_gravity="center"
-    android:id="@+id/toolbar_title"
-    />
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/btnMyScrap"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="#00ff0000"
+            android:text=""
+            android:textColor="#5b5b5b"
+            android:layout_gravity="bottom|left"
+            android:textSize="13dp"
+            android:visibility="invisible" />
+
+        <TextView
+            android:id="@+id/titleSitList"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="10dp"
+            android:gravity="center"
+            android:text="상황별 설정"
+            android:textColor="#ff4848"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnEditSit"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_marginVertical="10dp"
+            android:background="#00ff0000"
+            android:text="편집"
+            android:textColor="#5b5b5b"
+            android:layout_gravity="bottom|right"
+            android:textSize="13dp"
+            android:visibility="visible" />
+    </FrameLayout>
+
+
 
 <ListView
     android:id="@+id/listview1"

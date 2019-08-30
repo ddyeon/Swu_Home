@@ -24,6 +24,14 @@
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".fragment.FragmentSitList"></activity>
         <activity android:name=".fragment.FragmentContact"></activity>
+        <activity android:name=".activity.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
 
 
     </application>
