@@ -29,7 +29,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="20dp"
+            android:layout_marginTop="30dp"
             android:layout_marginRight="20dp"
             android:orientation="horizontal">
 
@@ -38,7 +38,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="led 색상"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:fontFamily="sans-serif"
                 android:textColor="#333333"/>
 
@@ -55,10 +55,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="20dp"
-            android:layout_marginTop="10dp"
             android:layout_marginRight="20dp"
             android:layout_marginBottom="20dp"
-            android:paddingTop="20dp"
+            android:paddingTop="10dp"
             android:orientation="horizontal">
 
             <TextView
@@ -66,7 +65,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="보호자 문자 발송"
-                android:textSize="20dp"
+                android:textSize="18dp"
                 app:fontFamily="sans-serif"
                 android:textColor="#333333"/>
 
@@ -79,11 +78,9 @@
                 android:textOff="OFF"
                 android:textOn="ON"
                 android:textSize="20dp"
-                android:thumb="@drawable/switch_btn_selector"
+                android:track="@drawable/switch_btn_selector"
+                android:thumb="@drawable/switch_thumb_selector"
                 android:checked="false"
-                android:switchMinWidth="100dp"
-                android:trackTint="@color/colorAccent"
-
                 />
 
 
