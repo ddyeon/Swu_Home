@@ -2,10 +2,8 @@ package com.example.swu_home.fragment;
 
 import android.os.Bundle;
 
-
-import com.example.swu_home.R;
-
 import androidx.fragment.app.Fragment;
+
 
 public class FragmentSitList extends Fragment {
 
