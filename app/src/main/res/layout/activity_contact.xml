@@ -29,8 +29,8 @@
         android:layout_height="50dp"
         android:layout_gravity="bottom|end"
         android:paddingBottom="40dp"
-        android:layout_marginBottom="10dp"
-        android:src="@drawable/plus" />
+        android:layout_marginBottom="10dp"></ImageButton>
+        //android:src="@drawable/plus" />
 
 
 

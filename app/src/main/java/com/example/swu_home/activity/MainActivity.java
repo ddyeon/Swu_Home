@@ -1,37 +1,39 @@
 package com.example.swu_home.activity;
 
-import android.content.Context;
-import android.content.Intent;
-import android.support.design.widget.TabLayout;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentActivity;
-import android.support.v4.app.FragmentManager;
-import android.support.v4.app.FragmentPagerAdapter;
-import android.support.v4.app.FragmentTransaction;
-import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.View;
-import android.widget.LinearLayout;
-import android.widget.TextView;
-import android.widget.Toast;
+import android.view.MenuItem;
+        import android.view.View;
+        import android.widget.LinearLayout;
+        import android.widget.TextView;
+        import android.widget.Toast;
 
-import com.example.swu_home.R;
-import com.example.swu_home.fragment.FragmentAlarm;
-import com.example.swu_home.fragment.FragmentSetting;
-import com.example.swu_home.fragment.FragmentSit;
-import com.roughike.bottombar.BottomBar;
-import com.roughike.bottombar.OnTabSelectListener;
+        import com.example.swu_home.R;
+        import com.example.swu_home.fragment.FragmentAlarm;
+        import com.example.swu_home.fragment.FragmentSetting;
+        import com.example.swu_home.fragment.FragmentSit;
+        import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+/*import com.roughike.bottombar.BottomBar;
+import com.roughike.bottombar.OnTabSelectListener;*/
 
 
-import java.util.concurrent.TimeUnit;
+        import java.util.concurrent.TimeUnit;
+
+        import androidx.annotation.NonNull;
+        import androidx.fragment.app.FragmentActivity;
+        import androidx.viewpager.widget.ViewPager;
 
 public class MainActivity extends FragmentActivity {
+
+    BottomNavigationView bottomNavigationView;
+    private ViewPager menuViewPager;
 
     private FragmentSit fragmentSit;
     private FragmentAlarm fragmentAlarm;
     private FragmentSetting fragmentSetting;
+    MenuItem prevMenuItem;
 
 
     @Override
@@ -39,37 +41,76 @@ public class MainActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        fragmentSit = new FragmentSit();
-        fragmentAlarm = new FragmentAlarm();
-        fragmentSetting = new FragmentSetting();
+        menuViewPager = findViewById(R.id.viewPager);
+        bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navi);
 
-        initFragment();
-
-        BottomBar bottomBar = (BottomBar) findViewById(R.id.bottomBar);
-        bottomBar.setOnTabSelectListener(new OnTabSelectListener() {
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
             @Override
-            public void onTabSelected(int tabId) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
+                switch (menuItem.getItemId()) {
+                    case R.id.action_home:
+                        menuViewPager.setCurrentItem(0);
+                        break;
 
-                if(tabId == R.id.tab_home){
-                    transaction.replace(R.id.contentContainer, fragmentSit).commit();
-                }else if(tabId == R.id.tab_alarm){
-                    transaction.replace(R.id.contentContainer, fragmentAlarm).commit();
-                }else if(tabId == R.id.tab_setting){
-                    transaction.replace(R.id.contentContainer, fragmentSetting).commit();
+                    case R.id.action_alarm:
+                        menuViewPager.setCurrentItem(1);
+                        break;
+
+                    case R.id.action_setting:
+                        menuViewPager.setCurrentItem(2);
+                        break;
                 }
+                return false;
+            }
+
+        });
+
+        menuViewPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            @Override
+            public void onPageScrolled(int i, float v, int i1) {
+
+            }
+
+            @Override
+            public void onPageSelected(int position) {
+
+                if (prevMenuItem != null) {
+                    prevMenuItem.setChecked(false);
+                } else {
+                    bottomNavigationView.getMenu().getItem(0).setChecked(false);
+                }
+                Log.d("page", "onPageSelected: " + position);
+                bottomNavigationView.getMenu().getItem(position).setChecked(true);
+                prevMenuItem = bottomNavigationView.getMenu().getItem(position);
+            }
+
+
+            @Override
+            public void onPageScrollStateChanged(int i) {
+
             }
         });
+        setupViewPager(menuViewPager);
     }
 
-    //app 실행 시 보여지는 Fragment 설정
-    public void initFragment(){
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.add(R.id.contentContainer, fragmentSit);
-        transaction.addToBackStack(null);
-        transaction.commit();
+    private void setupViewPager(ViewPager viewPager){
+        ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
+        fragmentSit=new FragmentSit();
+        fragmentAlarm=new FragmentAlarm();
+        fragmentSetting=new FragmentSetting();
+
+        adapter.addFragment(fragmentSit);
+        adapter.addFragment(fragmentAlarm);
+        adapter.addFragment(fragmentSetting);
+        viewPager.setAdapter(adapter);
     }
-    /*private TabLayout menuTabLayout;
+
+
+
+
+/*
+
+    private TabLayout menuTabLayout;
     private ViewPager menuViewPager;
     private Context mContext;
     @Override
@@ -113,21 +154,21 @@ public class MainActivity extends FragmentActivity {
     //커스텀 탭바 적용
     private View createTabView(String tabName) {
         View tabView = LayoutInflater.from(mContext).inflate(R.layout.home_tab, null);
-        TextView txtName = (TextView) tabView.findViewById(R.id.tabName);
+        TextView txtName = (TextView) tabView.findViewById(R.id.txtName);
         txtName.setText(tabName);
         return tabView;
     }
     //커스텀 탭바2 적용
     private View createTabView2(String tabName) {
         View tabView = LayoutInflater.from(mContext).inflate(R.layout.alert_tab, null);
-        TextView txtName = (TextView) tabView.findViewById(R.id.tabName);
+        TextView txtName = (TextView) tabView.findViewById(R.id.txtName);
         txtName.setText(tabName);
         return tabView;
     }
     //커스텀 탭바3 적용
     private View createTabView3(String tabName) {
         View tabView = LayoutInflater.from(mContext).inflate(R.layout.setting_tab, null);
-        TextView txtName = (TextView) tabView.findViewById(R.id.tabName);
+        TextView txtName = (TextView) tabView.findViewById(R.id.txtName);
         txtName.setText(tabName);
         return tabView;
     }
@@ -158,7 +199,8 @@ public class MainActivity extends FragmentActivity {
         public int getCount() {
             return tabCount;
         }
-    } //end class ViewPagerAdapter*/
+    } //end class ViewPagerAdapter
+*/
 
     private long backPressedAt;
 

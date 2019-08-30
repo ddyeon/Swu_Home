@@ -2,11 +2,14 @@ package com.example.swu_home.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.content.ContextCompat;
-import android.support.v7.app.AppCompatActivity;
+
+
 import android.widget.ListView;
 
 import com.example.swu_home.R;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.content.ContextCompat;
 
 public class SitListActivity extends AppCompatActivity {
 

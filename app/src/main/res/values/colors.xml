@@ -3,4 +3,9 @@
     <color name="colorPrimary">#fea0b2</color>
     <color name="colorPrimaryDark">#ffffff</color>
     <color name="colorAccent">#D81B60</color>
+
+    <color name="tab_disable">#979797</color>
+    <color name="tab_enable">#FFFFFF</color>
+    <color name="tab_checked">#F3CD70</color>
+    <color name="tab_unchecked">#FFFFFF</color>
 </resources>

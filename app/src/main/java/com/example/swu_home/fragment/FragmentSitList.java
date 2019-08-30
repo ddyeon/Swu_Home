@@ -1,15 +1,19 @@
 package com.example.swu_home.fragment;
 
 import android.os.Bundle;
-import android.support.v7.app.AppCompatActivity;
+
 
 import com.example.swu_home.R;
 
-public class FragmentSitList extends AppCompatActivity {
+import androidx.fragment.app.Fragment;
+
+public class FragmentSitList extends Fragment {
+
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        // setContentView(R.layout.activity_main);
     }
 }
+
