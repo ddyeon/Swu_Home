@@ -57,15 +57,28 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
-
-                <TextView
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="초인종"
-                    android:textAlignment="center"
-                    android:layout_marginRight="15dp"
-                    android:textSize="15dp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="초인종"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="50dp"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imgBellCon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:src="@drawable/imgcon_icon"
+                        android:visibility="invisible"/>
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="0dp"
@@ -115,15 +128,28 @@
                 android:layout_marginBottom="10dp"
                 android:orientation="horizontal">
 
-
-                <TextView
+                <LinearLayout
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:text="화재"
-                    android:textAlignment="center"
-                    android:layout_marginRight="15dp"
-                    android:textSize="15dp" />
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="화재"
+                        android:textAlignment="center"
+                        android:layout_marginLeft="55dp"
+                        android:textSize="15dp" />
+
+                    <ImageView
+                        android:id="@+id/imgFireCon"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="30dp"
+                        android:src="@drawable/imgcon_icon"
+                        android:visibility="invisible"/>
+                </LinearLayout>
 
                 <TextView
                     android:layout_width="0dp"
