@@ -16,7 +16,8 @@
         android:textColor="#ff4848"
         android:gravity="center"
         android:textSize="20dp"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="15dp"
+        android:paddingTop="20dp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -36,6 +37,7 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="led 색상"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <Spinner
@@ -53,6 +55,7 @@
             android:layout_marginLeft="20dp"
             android:layout_marginTop="15dp"
             android:layout_marginRight="20dp"
+            android:paddingTop="20dp"
             android:orientation="horizontal">
 
             <TextView
@@ -60,13 +63,20 @@
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:text="보호자 문자 발송"
+                android:textSize="20dp"
                 android:textStyle="bold" />
 
             <Switch
                 android:id="@+id/switch1"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:switchMinWidth="40dp"
+                android:showText="true"
+                android:textOff="OFF"
+                android:textOn="ON"
+                android:textSize="20dp"
+                android:thumb="@drawable/switch_btn_selector"
+                android:checked="false"
+                android:switchMinWidth="100dp"
                 android:trackTint="@color/colorAccent"
 
                 />
@@ -80,14 +90,12 @@
                     android:spinnerMode="dropdown" />-->
 
         </LinearLayout>
-
-
+        <Button
+            android:id="@+id/btnOn"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:text="알람 켜기" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnOn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="알람 켜기" />
 
 </LinearLayout>

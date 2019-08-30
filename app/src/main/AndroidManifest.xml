@@ -33,10 +33,6 @@
         <activity android:name=".activity.ContactActivity"></activity>
         <activity android:name=".activity.SitListActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
-        <activity android:name=".fragment.FragmentSitList"></activity>
-        <activity android:name=".fragment.FragmentSitSet"></activity>
-        <activity android:name=".fragment.FragmentContact"></activity>
-        <activity android:name=".fragment.FragmentSit"></activity>
         <activity android:name=".activity.SitSetActivity"></activity>
 
 

@@ -19,10 +19,10 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
 
 
-public class SitSetActivity extends FragmentActivity {
+public class SitSetActivity extends AddContactActivity {
 
     private String select_item;
-
+    private boolean state = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +30,7 @@ public class SitSetActivity extends FragmentActivity {
 
         //보호자 on/off 스위치 변수 선언
         Switch sw = (Switch)findViewById(R.id.switch1);
+
 
         //알림 버튼
         Button alertbtn = (Button)findViewById(R.id.btnOn);
@@ -39,9 +40,11 @@ public class SitSetActivity extends FragmentActivity {
 
         //color arrary 가져오기
         final String [] data = getResources().getStringArray(R.array.color);
-        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line);
+        ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_dropdown_item_1line,data);
         final Spinner spinner = (Spinner)findViewById(R.id.spinLED);
         spinner.setAdapter(adapter);
+        //selected값 비교 함수
+        CompareValue();
 
 
         //spinner listener
@@ -53,7 +56,7 @@ public class SitSetActivity extends FragmentActivity {
             {
                 String str = (String) spinner.getSelectedItem();
                 select_item = str;
-                //Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString()+"을 선택하셨습니다", Toast.LENGTH_SHORT).show();
+                Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString()+"을 선택하셨습니다", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -62,23 +65,24 @@ public class SitSetActivity extends FragmentActivity {
 
             }
         });
+
         //스위치 리스너
         sw.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
             @Override
             public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
-                if(isChecked == true){
-                    Intent boolintent = new Intent(SitSetActivity.this, SitListActivity.class);
-                    boolintent.putExtra("bool", true);
-                    startActivity(boolintent);
+                if(isChecked){
+                    Toast.makeText(getApplicationContext(),
+                            "Switch is on", Toast.LENGTH_LONG).show();
+                    state = true;
 
                 }
-                else {
-                    Intent boolintent = new Intent(SitSetActivity.this, SitListActivity.class);
-                    boolintent.putExtra("bool", false);
-                    startActivity(boolintent);
-
-
+                else{
+                    Toast.makeText(getApplicationContext(),
+                            "Switch is off", Toast.LENGTH_LONG).show();
+                    state = false;
                 }
+
+
             }
         });
 
@@ -88,52 +92,38 @@ public class SitSetActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 //color 값 비교 함수 호출
-                CompareValue();
                 //알람 설정 메세지 띄우기.
                 Toast.makeText(getApplicationContext(), "알림이 설정되었습니다", Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
-                startActivity(intent);
+                Intent setIntent = new Intent(SitSetActivity.this, MainActivity.class);
+                setIntent.putExtra("select_color", select_item);
+                setIntent.putExtra("msg",state);
+
+                startActivity(setIntent);
             }
         });
-
-
 
 
 
     }
     //spinner 값 비교 하고 해당 값 보내기
     public void CompareValue() {
-        if(select_item.equals("빨간색"))
-        {
-            select_item = "red";
-            Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
-            Intent intent2 = new Intent(SitSetActivity.this, SitListActivity.class);
-            intent.putExtra("color",select_item);
-            intent2.putExtra("color", select_item);
-            startActivity(intent);
-        }
+        if (select_item != null) {
 
-        if(select_item.equals("초록색"))
-        {
-            select_item = "green";
-            Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
-            Intent intent2 = new Intent(SitSetActivity.this, SitListActivity.class);
-            intent.putExtra("color",select_item);
-            intent2.putExtra("color", select_item);
-            startActivity(intent);
+            if (select_item.equals("빨간색")) {
+                select_item = "red";
+            }
 
-        }
+            if (select_item.equals("초록색")) {
+                select_item = "green";
 
-        if(select_item.equals("노란색"))
-        {
-            select_item = "yellow";
-            Intent intent = new Intent(SitSetActivity.this, MainActivity.class);
-            Intent intent2 = new Intent(SitSetActivity.this, SitListActivity.class);
-            intent.putExtra("color",select_item);
-            intent2.putExtra("color", select_item);
-            startActivity(intent);
+            }
+
+            if (select_item.equals("노란색")) {
+                select_item = "yellow";
+            } else {
+                select_item = "none";
+            }
         }
     }
-
 
 }
