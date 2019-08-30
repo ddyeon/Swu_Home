@@ -5,18 +5,18 @@
         android:id="@+id/action_home"
         android:checked="true"
         android:icon="@drawable/home"
-        android:title="Home"
+        android:title="홈"
         app:showAsAction="ifRoom" />
     <item
         android:id="@+id/action_alarm"
         android:checked="false"
         android:icon="@drawable/alarm"
-        android:title="Alarm"
+        android:title="현재 상황"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_setting"
+        android:id="@+id/action_contact"
         android:checked="false"
-        android:icon="@drawable/setting"
-        android:title="Setting"
+        android:icon="@drawable/contact"
+        android:title="연락처"
         app:showAsAction="ifRoom" />
 </menu>

@@ -50,7 +50,7 @@ public class MainActivity extends AppCompatActivity {
                         menuViewPager.setCurrentItem(1);
                         break;
 
-                    case R.id.action_setting:
+                    case R.id.action_contact:
                         menuViewPager.setCurrentItem(2);
                         break;
                 }
