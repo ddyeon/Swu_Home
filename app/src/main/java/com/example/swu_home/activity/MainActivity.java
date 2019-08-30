@@ -44,7 +44,7 @@ public class MainActivity extends App {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        //veiwpager 설정
         menuViewPager = findViewById(R.id.viewPager);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navi);
 
