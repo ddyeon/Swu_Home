@@ -5,8 +5,8 @@
 
     <item
         android:drawable="@drawable/logo3"
-        android:width="63dp"
-        android:height="30dp"
+        android:width="100dp"
+        android:height="60dp"
         android:left="11dp"
         android:right="10dp"></item>
 

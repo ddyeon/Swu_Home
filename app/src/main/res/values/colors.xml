@@ -6,6 +6,6 @@
 
     <color name="tab_disable">#979797</color>
     <color name="tab_enable">#FFFFFF</color>
-    <color name="tab_checked">#333333</color>
-    <color name="tab_unchecked">#979797</color>
+    <color name="tab_checked">#fea0b2</color>
+    <color name="tab_unchecked">#ffe472</color>
 </resources>
