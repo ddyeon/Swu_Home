@@ -1,7 +1,10 @@
 package com.example.swu_home.activity;
 
-import android.app.AppComponentFactory;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.design.widget.BottomNavigationView;
+import android.support.v4.app.Fragment;
+import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MenuItem;
@@ -14,7 +17,7 @@ import android.view.MenuItem;
         import com.example.swu_home.fragment.FragmentAlarm;
         import com.example.swu_home.fragment.FragmentSetting;
         import com.example.swu_home.fragment.FragmentSit;
-        import com.google.android.material.bottomnavigation.BottomNavigationView;
+
 
 /*import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;*/
@@ -23,11 +26,10 @@ import com.roughike.bottombar.OnTabSelectListener;*/
         import java.util.concurrent.TimeUnit;
 
         import androidx.annotation.NonNull;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentActivity;
+        import androidx.fragment.app.FragmentActivity;
         import androidx.viewpager.widget.ViewPager;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends App {
 
     BottomNavigationView bottomNavigationView;
     private ViewPager menuViewPager;
