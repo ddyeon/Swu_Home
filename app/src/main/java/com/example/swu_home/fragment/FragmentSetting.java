@@ -4,10 +4,12 @@ import android.os.Bundle;
 
 //import androidx.fragment.app.Fragment;
 
-import android.support.v4.app.Fragment;
+//import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.fragment.app.Fragment;
 
 import com.example.swu_home.R;
 
@@ -25,6 +27,6 @@ public class FragmentSetting extends Fragment {
         setContentView(R.layout.activity_main);*/
 
         //Inflate the layout for this fragment
-        return inflater.inflate(R.layout.activity_setting, container, false);
+        return inflater.inflate(R.layout.activity_contact, container, false);
     }
 }

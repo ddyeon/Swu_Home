@@ -1,35 +1,26 @@
 package com.example.swu_home.activity;
 
 import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.design.widget.BottomNavigationView;
-import android.support.v4.app.Fragment;
-import android.support.v4.view.ViewPager;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.MenuItem;
-        import android.view.View;
-        import android.widget.LinearLayout;
-        import android.widget.TextView;
-        import android.widget.Toast;
+import android.widget.Toast;
 
-        import com.example.swu_home.R;
-        import com.example.swu_home.fragment.FragmentAlarm;
-        import com.example.swu_home.fragment.FragmentSetting;
-        import com.example.swu_home.fragment.FragmentSit;
+import androidx.annotation.NonNull;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.viewpager.widget.ViewPager;
 
+import com.example.swu_home.R;
+import com.example.swu_home.fragment.FragmentAlarm;
+import com.example.swu_home.fragment.FragmentSetting;
+import com.example.swu_home.fragment.FragmentSit;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.concurrent.TimeUnit;
 
 /*import com.roughike.bottombar.BottomBar;
 import com.roughike.bottombar.OnTabSelectListener;*/
 
-
-        import java.util.concurrent.TimeUnit;
-
-        import androidx.annotation.NonNull;
-        import androidx.fragment.app.FragmentActivity;
-        import androidx.viewpager.widget.ViewPager;
-
-public class MainActivity extends App {
+public class MainActivity extends AppCompatActivity {
 
     BottomNavigationView bottomNavigationView;
     private ViewPager menuViewPager;
