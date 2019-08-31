@@ -9,15 +9,19 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="wrap_content"
         android:gravity="center_vertical">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="긴급 연락처 저장"
-            android:textSize="20sp"
-            android:textColor="#9C3939"
+            android:textStyle="bold"
+            android:textColor="#ff4848"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="15dp"
             />
     </LinearLayout>
 
@@ -29,23 +33,25 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:gravity="center"
             android:text="지정번호, 연락할 사람 이름, 전화번호를 입력해주세요!\n 연락처에서 삭제를 원할 때는, 사람 이름을 입력하고 삭제 버튼을 누르세요."
-            android:textSize="12sp"
             android:textColor="#A39E9E"
 
-            />
+            android:textSize="12sp" />
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="150dp"
+        android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:gravity="center_vertical">
+        android:gravity="center_vertical"
+        android:layout_marginTop="20dp">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="번호"
-            android:textSize="20dp"/>
+            android:textSize="18dp"
+            android:layout_marginRight="35dp"/>
 
         <EditText
             android:id="@+id/number"
@@ -65,7 +71,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="이름"
-            android:textSize="20dp"/>
+            android:textSize="18dp"
+            android:layout_marginRight="35dp"/>
 
         <EditText
             android:id="@+id/name"
@@ -85,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="전화번호"
-            android:textSize="20dp"/>
+            android:textSize="18dp"/>
 
         <EditText
             android:id="@+id/mobile"
@@ -98,7 +105,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="20dp"
         android:paddingTop="20dp">
 
         <Button
@@ -107,7 +114,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="추가"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:background="@drawable/border_button"/>
 
         <Button
             android:id="@+id/delete"
@@ -115,7 +123,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:text="삭제"
-            android:padding="5dp"/>
+            android:padding="5dp"
+            android:background="@drawable/border_button"/>
     </LinearLayout>
 
     <ScrollView
