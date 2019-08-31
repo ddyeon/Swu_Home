@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     android:orientation="vertical"
     tools:context=".activity.MainActivity">
 
@@ -11,38 +11,40 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
 
         android:layout_marginTop="150dp"
-        tools:src="@drawable/alertlaundry_icon"
-        />
+        android:layout_weight="4"
+        tools:src="@drawable/alertlaundry_icon" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
         android:layout_gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_weight="0.3"
         android:text="세탁이 완료되었습니다."
+
+
         android:textColor="#3b3b3b"
-
-
-        android:textStyle="bold"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:layout_weight="0.4"
         android:text="확인해 보세요!"
+
+
         android:textColor="#3b3b3b"
-
-
-        android:textStyle="bold"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -50,15 +52,14 @@
 
     <Button
         android:id="@+id/okbtn"
-        android:padding="20dp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
         android:layout_gravity="center"
-        android:layout_marginTop="50dp"
-        android:text="확인"
-        />
-
-
+        android:layout_marginTop="30dp"
+        android:layout_weight="0.5"
+        android:padding="20dp"
+        android:background="@drawable/border_button"
+        android:text="확인" />
 
 
 </android.widget.LinearLayout>

@@ -136,7 +136,7 @@
             android:id="@+id/result"
             android:layout_width="wrap_content"
             android:layout_height="400dp"
-            android:textSize="10dp"/>
+            android:textSize="20dp" />
     </ScrollView>
 
 </LinearLayout>

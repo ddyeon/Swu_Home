@@ -11,37 +11,41 @@
     <ImageView
         android:id="@+id/imageView2"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
 
         android:layout_marginTop="200dp"
+        android:layout_weight="4"
         tools:src="@drawable/alertfire_icon" />
 
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
         android:layout_gravity="center"
         android:layout_marginTop="40dp"
+        android:layout_weight="0.3"
         android:text="화재 경보기가 울립니다."
+
+
         android:textColor="#3b3b3b"
-
-
-        android:textStyle="bold"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent"></TextView>
+
     <TextView
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="0"
         android:layout_gravity="center"
         android:layout_marginTop="10dp"
+        android:layout_weight="0.3"
         android:text="대피하세요!"
+
+
         android:textColor="#3b3b3b"
-
-
-        android:textStyle="bold"
         android:textSize="20dp"
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
@@ -52,9 +56,18 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:padding="20dp"
         android:layout_marginTop="50dp"
+        android:layout_weight="0"
+        android:padding="20dp"
+        android:background="@drawable/border_button"
         android:text="확인" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="match_parent"
+        android:layout_height="0"
+        android:layout_weight="0.7"
+       />
 
 
 </android.widget.LinearLayout>
