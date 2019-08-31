@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 
 import com.example.swu_home.R;
+import com.example.swu_home.fragment.FragmentSit;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
@@ -34,7 +35,6 @@ public class SitSetActivity extends AddContactActivity {
 
         //알림 버튼
         Button alertbtn = (Button)findViewById(R.id.btnOn);
-
         //FragmentSit에서 받기
         Intent i = getIntent();
 
@@ -44,7 +44,7 @@ public class SitSetActivity extends AddContactActivity {
         final Spinner spinner = (Spinner)findViewById(R.id.spinLED);
         spinner.setAdapter(adapter);
         //selected값 비교 함수
-        CompareValue();
+
 
 
         //spinner listener
@@ -56,7 +56,8 @@ public class SitSetActivity extends AddContactActivity {
             {
                 String str = (String) spinner.getSelectedItem();
                 select_item = str;
-                Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString()+"을 선택하셨습니다", Toast.LENGTH_SHORT).show();
+                CompareValue();
+                //Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString()+"을 선택하셨습니다", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -94,11 +95,15 @@ public class SitSetActivity extends AddContactActivity {
                 //color 값 비교 함수 호출
                 //알람 설정 메세지 띄우기.
                 Toast.makeText(getApplicationContext(), "알림이 설정되었습니다", Toast.LENGTH_SHORT).show();
-                Intent setIntent = new Intent(SitSetActivity.this, MainActivity.class);
-                setIntent.putExtra("select_color", select_item);
-                setIntent.putExtra("msg",state);
+                SetBean setBean = new SetBean();
+                setBean.setColorLed(select_item);
+                setBean.setMsg(state);
 
-                startActivity(setIntent);
+                Intent setIntent = new Intent(SitSetActivity.this, FragmentSit.class);
+                setIntent.putExtra("set_bean", setBean);
+                setResult(RESULT_OK, setIntent);
+                finish();
+
             }
         });
 
@@ -120,9 +125,11 @@ public class SitSetActivity extends AddContactActivity {
 
             if (select_item.equals("노란색")) {
                 select_item = "yellow";
-            } else {
-                select_item = "none";
             }
+
+        }
+        else {
+            select_item = "none";
         }
     }
 
