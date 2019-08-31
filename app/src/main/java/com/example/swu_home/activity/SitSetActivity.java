@@ -3,6 +3,7 @@ package com.example.swu_home.activity;
 import android.content.Intent;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +15,6 @@ import android.widget.Toast;
 
 
 import com.example.swu_home.R;
-import com.example.swu_home.fragment.FragmentSit;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
@@ -22,7 +22,7 @@ import androidx.fragment.app.FragmentActivity;
 
 public class SitSetActivity extends AddContactActivity {
 
-    private String select_item;
+    private String select_item="gray";
     private boolean state = false;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +35,7 @@ public class SitSetActivity extends AddContactActivity {
 
         //알림 버튼
         Button alertbtn = (Button)findViewById(R.id.btnOn);
+
         //FragmentSit에서 받기
         Intent i = getIntent();
 
@@ -44,7 +45,7 @@ public class SitSetActivity extends AddContactActivity {
         final Spinner spinner = (Spinner)findViewById(R.id.spinLED);
         spinner.setAdapter(adapter);
         //selected값 비교 함수
-
+        CompareValue();
 
 
         //spinner listener
@@ -55,9 +56,9 @@ public class SitSetActivity extends AddContactActivity {
                                        int position, long id)
             {
                 String str = (String) spinner.getSelectedItem();
-                select_item = str;
-                CompareValue();
-                //Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString()+"을 선택하셨습니다", Toast.LENGTH_SHORT).show();
+                select_item = parent.getItemAtPosition(position).toString();
+                Log.d("tag", select_item);
+              //  Toast.makeText(getApplicationContext(), parent.getItemAtPosition(position).toString()+"을 선택하셨습니다", Toast.LENGTH_SHORT).show();
             }
 
             @Override
@@ -93,17 +94,14 @@ public class SitSetActivity extends AddContactActivity {
             @Override
             public void onClick(View v) {
                 //color 값 비교 함수 호출
+                CompareValue();
                 //알람 설정 메세지 띄우기.
                 Toast.makeText(getApplicationContext(), "알림이 설정되었습니다", Toast.LENGTH_SHORT).show();
-                SetBean setBean = new SetBean();
-                setBean.setColorLed(select_item);
-                setBean.setMsg(state);
+                Intent setIntent = new Intent(SitSetActivity.this, MainActivity.class);
+                setIntent.putExtra("select_color", select_item);
+                setIntent.putExtra("msg",state);
 
-                Intent setIntent = new Intent(SitSetActivity.this, FragmentSit.class);
-                setIntent.putExtra("set_bean", setBean);
-                setResult(RESULT_OK, setIntent);
-                finish();
-
+                startActivity(setIntent);
             }
         });
 
@@ -116,6 +114,7 @@ public class SitSetActivity extends AddContactActivity {
 
             if (select_item.equals("빨간색")) {
                 select_item = "red";
+                Log.d("color", select_item);
             }
 
             if (select_item.equals("초록색")) {
@@ -125,11 +124,9 @@ public class SitSetActivity extends AddContactActivity {
 
             if (select_item.equals("노란색")) {
                 select_item = "yellow";
+            } else {
+                select_item = "none";
             }
-
-        }
-        else {
-            select_item = "none";
         }
     }
 

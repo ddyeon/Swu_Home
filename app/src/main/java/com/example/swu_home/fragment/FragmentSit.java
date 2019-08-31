@@ -53,6 +53,51 @@ public class FragmentSit extends Fragment {
             }
         });
 
+        ImageButton btnRoom = view.findViewById(R.id.btnRoom);
+        btnRoom.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, SitSetActivity.class);
+                //startActivityForResult(intent,);
+                activity.startActivity(intent);
+                activity.finish();
+
+            }
+        });
+        ImageButton btnLaundry = view.findViewById(R.id.btnLaundry);
+        btnLaundry.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, SitSetActivity.class);
+                //startActivityForResult(intent,);
+                activity.startActivity(intent);
+                activity.finish();
+
+            }
+        });
+        ImageButton btnFire = view.findViewById(R.id.btnFire);
+        btnFire.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, SitSetActivity.class);
+                //startActivityForResult(intent,);
+                activity.startActivity(intent);
+                activity.finish();
+
+            }
+        });
+        ImageButton btnBaby = view.findViewById(R.id.btnBaby);
+        btnBaby.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(activity, SitSetActivity.class);
+                //startActivityForResult(intent,);
+                activity.startActivity(intent);
+                activity.finish();
+
+            }
+        });
+
         return view;
 
     }

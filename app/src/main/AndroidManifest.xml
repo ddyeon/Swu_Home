@@ -6,6 +6,14 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
+    //문자
+    <uses-permission android:name="android.permission.RECEIVE_SMS" />
+    <uses-permission android:name="android.permission.SEND_SMS" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    //진동
+    <uses-permission android:name = "android.permission.VIBRATE"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -33,7 +41,11 @@
         </activity>
         <activity android:name=".activity.AddContactActivity"></activity>
         <activity android:name=".activity.AlarmActivity"></activity>
-        <activity android:name=".activity.AlertActivity"></activity>
+        <activity android:name=".activity.AlertBellActivity"></activity>
+        <activity android:name=".activity.AlertFireActivity"></activity>
+        <activity android:name=".activity.AlertRoomActivity"></activity>
+        <activity android:name=".activity.AlertLaundryActivity"></activity>
+        <activity android:name=".activity.AlertBabyActivity"></activity>
         <activity android:name=".activity.ContactActivity"></activity>
         <activity android:name=".activity.SitListActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
