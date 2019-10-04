@@ -6,12 +6,9 @@
 
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
 
-    //문자
     <uses-permission android:name="android.permission.RECEIVE_SMS" />
     <uses-permission android:name="android.permission.SEND_SMS" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-
-    //진동
     <uses-permission android:name = "android.permission.VIBRATE"/>
 
     <application
@@ -36,9 +33,8 @@
 
         </activity>
 
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"></activity>
 
-        </activity>
         <activity android:name=".activity.AddContactActivity"></activity>
         <activity android:name=".activity.AlarmActivity"></activity>
         <activity android:name=".activity.AlertBellActivity"></activity>
@@ -50,9 +46,7 @@
         <activity android:name=".activity.SitListActivity"></activity>
         <activity android:name=".activity.SettingActivity"></activity>
         <activity android:name=".activity.SitSetActivity"></activity>
-        <activity android:name=".activity.ContactActivity"></activity>
-
-
+        <activity android:name=".fragment.FragmentSitMain"></activity>
     </application>
 
 </manifest>

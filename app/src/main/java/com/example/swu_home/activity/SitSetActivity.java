@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 
 import com.example.swu_home.R;
+import com.example.swu_home.fragment.FragmentSitMain;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentActivity;
@@ -45,7 +46,7 @@ public class SitSetActivity extends AddContactActivity {
         final Spinner spinner = (Spinner)findViewById(R.id.spinLED);
         spinner.setAdapter(adapter);
         //selected값 비교 함수
-        CompareValue();
+       // CompareValue();
 
 
         //spinner listener
@@ -113,19 +114,19 @@ public class SitSetActivity extends AddContactActivity {
         if (select_item != null) {
 
             if (select_item.equals("빨간색")) {
-                select_item = "red";
+                //select_item = "red";
                 Log.d("color", select_item);
             }
 
             if (select_item.equals("초록색")) {
-                select_item = "green";
+                //select_item = "green";
 
             }
 
             if (select_item.equals("노란색")) {
-                select_item = "yellow";
+                //select_item = "yellow";
             } else {
-                select_item = "none";
+                //select_item = "none";
             }
         }
     }

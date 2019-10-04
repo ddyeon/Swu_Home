@@ -9,6 +9,7 @@ import android.os.Vibrator;
 import android.telephony.SmsManager;
 import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -104,7 +105,7 @@ public class MainActivity extends AppCompatActivity {
     private int bluestate=0;
     String select_led;
     String data;
-    Intent setIntent= getIntent();
+
 
 //메시지
     final InputMethodManager[] imm = new InputMethodManager[1];
@@ -120,6 +121,9 @@ public class MainActivity extends AppCompatActivity {
     //블루투스2
     private BluetoothSPP bt;
 
+    Intent setIntent= getIntent();
+    ImageButton imagebtn;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -129,9 +133,17 @@ public class MainActivity extends AppCompatActivity {
         menuViewPager = findViewById(R.id.viewPager);
         bottomNavigationView = (BottomNavigationView) findViewById(R.id.bottom_navi);
         //sitset값 받아오기
-          /* setIntent = getIntent();
+        setIntent = getIntent();
         select_led =  setIntent.getStringExtra("select_color");
-        Log.d("tag", select_led);*/
+
+        //imagebtn = (ImageButton)findViewById(R.id.)
+        // 값넘어옴.
+        if(select_led != null) {
+            Log.d("ledcolor", select_led);
+           //changeLed(select_led);
+
+        }
+
 
 
 
@@ -327,7 +339,7 @@ public class MainActivity extends AppCompatActivity {
         // 페어링 되어있는 장치가 있는 경우
 
         else {
-            Button blue = findViewById(R.id.bluetooth);
+            ImageButton blue = findViewById(R.id.bluetooth);
             blue.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -585,6 +597,23 @@ public class MainActivity extends AppCompatActivity {
             e.printStackTrace();
         }
 
+    }
+
+    void changeLed (String select_led) {
+        if(select_led.equals("빨간색")) {
+            imagebtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.border_red));
+        }
+
+        if(select_led.equals("초록색")) {
+            imagebtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.border_green));
+        }
+
+        if(select_led.equals("노란색")) {
+            imagebtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.border_yellow));
+        }
+        else {
+            imagebtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.border_grey));
+        }
     }
 
 /*

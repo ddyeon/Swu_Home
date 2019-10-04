@@ -5,10 +5,10 @@
 
     <item
         android:drawable="@drawable/alertbaby"
-        android:width="300dp"
-        android:height="350dp"
+        android:width="200dp"
+        android:height="200dp"
         android:left="11dp"
-        android:right="10dp"></item>
+        android:right="10dp" />
 
 </layer-list>
 
