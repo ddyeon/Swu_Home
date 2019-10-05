@@ -599,7 +599,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    void changeLed (String select_led) {
+/*    void changeLed (String select_led) {
         if(select_led.equals("빨간색")) {
             imagebtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.border_red));
         }
@@ -614,7 +614,7 @@ public class MainActivity extends AppCompatActivity {
         else {
             imagebtn.setBackgroundDrawable(ContextCompat.getDrawable(this, R.drawable.border_grey));
         }
-    }
+    }*/
 
 /*
     //블루투스2
